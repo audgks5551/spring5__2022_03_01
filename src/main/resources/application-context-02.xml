@@ -9,8 +9,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-  <bean id="johnMayer" class="hello.DI.bean_autowiring.Singer"
-        depends-on="gopher" />
-  <bean id="gopher" class="hello.DI.bean_autowiring.Guitar" />
+  <context:component-scan
+      base-package="hello.DI"/>
 
 </beans>

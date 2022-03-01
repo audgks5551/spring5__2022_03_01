@@ -9,8 +9,16 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-  <bean id="johnMayer" class="hello.DI.bean_autowiring.Singer"
-        depends-on="gopher" />
-  <bean id="gopher" class="hello.DI.bean_autowiring.Guitar" />
+  <bean id="fooOne" class="hello.DI.bean_autowiring.Foo"/>
+  <bean id="barOne" class="hello.DI.bean_autowiring.Bar"/>
+
+  <bean id="targetByName" autowire="byName"
+        class="hello.DI.bean_autowiring.Target" lazy-init="true" />
+
+  <bean id="targetByType" autowire="byType"
+        class="hello.DI.bean_autowiring.Target" lazy-init="true" />
+
+  <bean id="targetConstructor" autowire="constructor"
+        class="hello.DI.bean_autowiring.Target" lazy-init="true" />
 
 </beans>
